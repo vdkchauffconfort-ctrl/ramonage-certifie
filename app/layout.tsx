@@ -1,12 +1,9 @@
 import './globals.css';
 import Link from 'next/link';
 import React from 'react';
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
+// Métadonnées (pour le référencement)
+export const metadata = {
   title: "Ramonage Cheminée - Votre Expert Certifié en Belgique",
   description: "Services de ramonage agréé, devis en ligne et conseils pour l'entretien de votre cheminée et poêle en Belgique.",
 };
@@ -37,13 +34,9 @@ function Navbar() {
 
       {/* Liens de navigation */}
       <div style={{ display: 'flex', gap: '25px', alignItems: 'center' }}>
-
-        {/* Bouton Accueil */}
         <Link href="/" style={{ color: '#fff', textDecoration: 'none', fontSize: '1.1rem' }}>
           Accueil
         </Link>
-
-        {/* Pages Principales */}
         <Link href="/services" style={{ color: '#fff', textDecoration: 'none', fontSize: '1.1rem' }}>
           Nos Services
         </Link>
@@ -71,16 +64,13 @@ function Navbar() {
   );
 }
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+// Composant Principal de Layout
+export default function RootLayout({ children }) {
   return (
     <html lang="fr">
-      <body className={inter.className}>
-        <Navbar /> {/* Le menu est ici, donc il est global */}
-        {children}
+      <body>
+        <Navbar /> {/* Le menu principal */}
+        {children} {/* Le contenu de chaque page va ici */}
         <footer style={{ 
             backgroundColor: '#eee', 
             padding: '20px', 
