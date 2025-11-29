@@ -16,10 +16,10 @@ const serviceLinks = [
 
 export default function SubMenuServices() {
   return (
+    // Position Fixe à Droite pour tous les écrans (nous gérons le mobile dans un fichier séparé)
     <div style={{ 
-      // CONTIENT LE MENU: Position fixe à droite
       position: 'fixed', 
-      top: '80px', // Sous le menu principal
+      top: '80px', 
       right: '20px', 
       width: '250px', 
       backgroundColor: '#f8f9fa', 
@@ -39,7 +39,7 @@ export default function SubMenuServices() {
       </h3>
       <nav style={{ 
         display: 'flex', 
-        flexDirection: 'column', // Empile les liens verticalement
+        flexDirection: 'column', 
         gap: '5px' 
       }}>
         {serviceLinks.map((link, index) => (
