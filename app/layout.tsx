@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from 'next/link'; 
+import React from 'react';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -10,7 +11,6 @@ export const metadata: Metadata = {
   description: "Services de ramonage agréé, devis en ligne et conseils pour l'entretien de votre cheminée et poêle en Belgique.",
 };
 
-// Composant de la barre de navigation (Navbar)
 function Navbar() {
   return (
     <nav style={{ 
@@ -18,13 +18,15 @@ function Navbar() {
       padding: '15px 40px', 
       marginBottom: '20px',
       display: 'flex', 
+      // AJOUT CRUCIAL: Permet aux éléments d'aller à la ligne sur petit écran
+      flexWrap: 'wrap', 
       justifyContent: 'space-between', 
       alignItems: 'center',
-      position: 'sticky', // Le rend collant en haut (constant)
+      position: 'sticky', 
       top: 0,
       zIndex: 100 
     }}>
-      {/* Logo / Titre Principal (Lien vers l'Accueil) */}
+      {/* Logo / Titre Principal */}
       <Link href="/" style={{ 
         color: '#fff', 
         textDecoration: 'none', 
@@ -35,14 +37,11 @@ function Navbar() {
       </Link>
 
       {/* Liens de navigation */}
-      <div style={{ display: 'flex', gap: '25px', alignItems: 'center' }}>
-        
-        {/* L'accueil est accessible via le logo et ce lien */}
+      <div style={{ display: 'flex', gap: '25px', alignItems: 'center', marginTop: '10px' }}>
+
         <Link href="/" style={{ color: '#fff', textDecoration: 'none', fontSize: '1.1rem' }}>
           Accueil
         </Link>
-        
-        {/* Pages que vous avez créées */}
         <Link href="/services" style={{ color: '#fff', textDecoration: 'none', fontSize: '1.1rem' }}>
           Nos Services
         </Link>
@@ -52,8 +51,7 @@ function Navbar() {
         <Link href="/ramoneur" style={{ color: '#fff', textDecoration: 'none', fontSize: '1.1rem' }}>
           Ramoneur Agréé
         </Link>
-        
-        {/* Bouton d'Action (Contact) */}
+
         <Link href="/contact" style={{ 
           backgroundColor: '#d11e00', 
           color: 'white', 
@@ -77,8 +75,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
+      <head>
+        {/* META TAG ESSENTIEL POUR LE RESPONSIVE */}
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </head>
       <body className={inter.className}>
-        <Navbar /> {/* Le menu sera visible sur toutes les pages */}
+        <Navbar />
         {children}
         <footer style={{ 
             backgroundColor: '#eee', 
