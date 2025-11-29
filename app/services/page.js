@@ -1,6 +1,14 @@
+import SubMenuServices from '@/components/SubMenuServices'; //
 export default function ServicesPage() {
   return (
-    <main style={{ padding: '40px', maxWidth: '1000px', margin: '0 auto' }}>
+    return (
+    <main style={{ padding: '0 0 40px 0', maxWidth: '1000px', margin: '0 auto' }}>
+
+      <SubMenuServices /> {/* AJOUTER CETTE LIGNE JUSTE ICI */}
+
+      <div style={{ padding: '0 20px' }}> {/* Contenu principal pour la page Services */}
+        <h1 style={{ 
+        // ... reste du style du titre<main style={{ padding: '40px', maxWidth: '1000px', margin: '0 auto' }}>
 
       <h1 style={{ 
         fontSize: '2.5rem', 
