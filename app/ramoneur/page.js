@@ -1,4 +1,4 @@
-export default function RamoneurPage() { // CHANGEMENT ICI
+export default function RamoneurPage() { //
   return (
     <main style={{ padding: '40px', maxWidth: '1000px', margin: '0 auto' }}>
       
