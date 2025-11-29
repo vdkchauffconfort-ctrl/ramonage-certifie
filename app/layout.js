@@ -9,11 +9,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Ramonage Cheminée - Votre Expert Certifié en Belgique",
   description: "Services de ramonage agréé, devis en ligne et conseils pour l'entretien de votre cheminée et poêle en Belgique.",
-  // CONFIGURATION CRITIQUE POUR LE MOBILE (VIEWPORT)
   viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
 };
 
-// Composant de la barre de navigation (Navbar)
 function Navbar() {
   return (
     <nav style={{ 
@@ -27,7 +25,6 @@ function Navbar() {
       top: 0,
       zIndex: 100 
     }}>
-      {/* Logo / Titre Principal */}
       <Link href="/" style={{ 
         color: '#fff', 
         textDecoration: 'none', 
@@ -36,16 +33,10 @@ function Navbar() {
       }}>
         Ramoneur.be
       </Link>
-
-      {/* Liens de navigation */}
       <div style={{ display: 'flex', gap: '25px', alignItems: 'center' }}>
-
-        {/* Bouton Accueil */}
         <Link href="/" style={{ color: '#fff', textDecoration: 'none', fontSize: '1.1rem' }}>
           Accueil
         </Link>
-
-        {/* Pages Principales */}
         <Link href="/services" style={{ color: '#fff', textDecoration: 'none', fontSize: '1.1rem' }}>
           Nos Services
         </Link>
@@ -55,8 +46,6 @@ function Navbar() {
         <Link href="/ramoneur" style={{ color: '#fff', textDecoration: 'none', fontSize: '1.1rem' }}>
           Ramoneur Agréé
         </Link>
-
-        {/* Bouton d'Action (Contact) */}
         <Link href="/contact" style={{ 
           backgroundColor: '#d11e00', 
           color: 'white', 
@@ -81,7 +70,7 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className={inter.className}>
-        <Navbar /> 
+        <Navbar />
         {children}
         <footer style={{ 
             backgroundColor: '#eee', 
