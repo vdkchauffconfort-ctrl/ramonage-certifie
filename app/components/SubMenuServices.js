@@ -17,21 +17,30 @@ const serviceLinks = [
 export default function SubMenuServices() {
   return (
     <div style={{ 
+      // CONTIENT LE MENU: Position fixe à droite
+      position: 'fixed', 
+      top: '80px', // Sous le menu principal
+      right: '20px', 
+      width: '250px', 
       backgroundColor: '#f8f9fa', 
-      borderBottom: '1px solid #ccc', 
-      padding: '10px 0',
-      position: 'sticky', 
-      top: '60px', 
-      zIndex: 90
+      border: '1px solid #ddd',
+      padding: '10px',
+      borderRadius: '5px',
+      zIndex: 90 
     }}>
+      <h3 style={{ 
+          fontSize: '1.2rem', 
+          color: '#d11e00', 
+          marginBottom: '10px',
+          paddingBottom: '5px',
+          borderBottom: '1px solid #ccc' 
+      }}>
+          Explorer les Services
+      </h3>
       <nav style={{ 
-        maxWidth: '1200px', 
-        margin: '0 auto', 
         display: 'flex', 
-        overflowX: 'auto', 
-        justifyContent: 'flex-start', 
-        gap: '15px',
-        padding: '0 20px'
+        flexDirection: 'column', // Empile les liens verticalement
+        gap: '5px' 
       }}>
         {serviceLinks.map((link, index) => (
           <Link 
@@ -41,10 +50,8 @@ export default function SubMenuServices() {
               color: '#007bff', 
               textDecoration: 'none', 
               padding: '5px 10px', 
-              whiteSpace: 'nowrap', 
               fontSize: '0.9em',
-              fontWeight: '500',
-              borderRight: '1px solid #eee' 
+              borderLeft: '3px solid transparent'
             }}
           >
             {link.name}
