@@ -2,13 +2,11 @@ import './globals.css';
 import Link from 'next/link';
 import React from 'react';
 
-// Métadonnées (pour le référencement)
 export const metadata = {
   title: "Ramonage Cheminée - Votre Expert Certifié en Belgique",
   description: "Services de ramonage agréé, devis en ligne et conseils pour l'entretien de votre cheminée et poêle en Belgique.",
 };
 
-// Composant de la barre de navigation (Navbar)
 function Navbar() {
   return (
     <nav style={{ 
@@ -32,7 +30,7 @@ function Navbar() {
         Ramoneur.be
       </Link>
 
-      {/* Liens de navigation (Version PC) */}
+      {/* Liens de navigation */}
       <div style={{ display: 'flex', gap: '25px', alignItems: 'center' }}>
         <Link href="/" style={{ color: '#fff', textDecoration: 'none', fontSize: '1.1rem' }}>
           Accueil
