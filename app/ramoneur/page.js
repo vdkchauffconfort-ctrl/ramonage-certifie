@@ -66,4 +66,34 @@ export default function ConseilsPage() {
 
       <ul style={{ listStyle: 'disc', marginLeft: '20px', lineHeight: '1.6' }}>
         <li>Prix moyen d’un ramonage standard : de 50 à 100 euros par conduit</li>
-        <li>Dépôt ou nid d’oiseaux nécessitant un supplément : entre 30
+        <li>Dépôt ou nid d’oiseaux nécessitant un supplément : entre 30 et 70 euros additionnels</li>
+        <li>Contrat d’entretien annuel : dégressif selon le nombre de passages et la complexité</li>
+      </ul>
+
+      {/* SECTION 5: CERTIFICAT */}
+      <h2 style={{ fontSize: '1.8rem', color: '#333', marginTop: '2.5rem', borderBottom: '1px solid #eee', paddingBottom: '0.5rem' }}>
+        Attestation et démarches à ne pas négliger
+      </h2>
+      
+      <p style={{ lineHeight: '1.6' }}>
+        À l’issue de l’intervention, le ramoneur fournit systématiquement une **attestation** mentionnant la date, le professionnel et la méthode. Ce document sert de preuve auprès de l’assureur et de justificatif vis-à-vis des autorités. Ne pas présenter ce certificat pourrait compromettre la reconnaissance du préjudice.
+      </p>
+
+      {/* APPEL À L'ACTION */}
+      <div style={{ textAlign: 'center', margin: '50px 0' }}>
+          <a href="/contact" style={{ 
+            backgroundColor: '#007bff', 
+            color: 'white', 
+            padding: '15px 30px', 
+            textDecoration: 'none', 
+            borderRadius: '5px', 
+            fontWeight: 'bold',
+            display: 'inline-block' 
+          }}>
+            Prendre Rendez-vous avec un Ramoneur Certifié
+          </a>
+      </div>
+
+    </main>
+  );
+}
