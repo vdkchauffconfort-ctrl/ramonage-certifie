@@ -1,7 +1,5 @@
 import Link from 'next/link';
 import React from 'react';
-
-// Liste des liens pour les 10 pages de services
 const serviceLinks = [
   { name: "Ramonage Bois", href: "/services/ramonage-bois" },
   { name: "Inspection Caméra", href: "/services/inspection-camera" },
