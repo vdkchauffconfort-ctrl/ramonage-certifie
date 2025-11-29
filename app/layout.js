@@ -1,12 +1,15 @@
 import './globals.css';
 import Link from 'next/link';
 import React from 'react';
+import Head from 'next/head'; // NOUVEL IMPORT NÉCESSAIRE
 
+// Métadonnées (Pour le référencement)
 export const metadata = {
   title: "Ramonage Cheminée - Votre Expert Certifié en Belgique",
   description: "Services de ramonage agréé, devis en ligne et conseils pour l'entretien de votre cheminée et poêle en Belgique.",
 };
 
+// Composant de la barre de navigation (Navbar)
 function Navbar() {
   return (
     <nav style={{ 
@@ -66,6 +69,10 @@ function Navbar() {
 export default function RootLayout({ children }) {
   return (
     <html lang="fr">
+      <Head>
+        {/* TAG ESSENTIEL POUR LE MOBILE */}
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
       <body>
         <Navbar /> {/* Le menu est ici */}
         {children} {/* Le contenu de chaque page va ici */}
