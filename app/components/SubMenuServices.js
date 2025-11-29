@@ -16,17 +16,17 @@ const serviceLinks = [
 
 export default function SubMenuServices() {
   return (
-    // Position Fixe à Droite pour tous les écrans (nous gérons le mobile dans un fichier séparé)
+    // Rendre le menu vertical et l'aligner à droite
     <div style={{ 
-      position: 'fixed', 
-      top: '80px', 
-      right: '20px', 
       width: '250px', 
       backgroundColor: '#f8f9fa', 
       border: '1px solid #ddd',
       padding: '10px',
       borderRadius: '5px',
-      zIndex: 90 
+      float: 'right', // Ceci force le menu à droite
+      marginLeft: '30px', // Ajout d'une marge à gauche
+      marginTop: '30px', // Descendre sous le menu principal
+      marginBottom: '30px'
     }}>
       <h3 style={{ 
           fontSize: '1.2rem', 
