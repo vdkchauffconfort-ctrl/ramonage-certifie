@@ -1,0 +1,7 @@
+export default function Home() {
+  return (
+    <main>
+      <h1>BIENVENUE | RAMONAGE CERTIFIÉ BELGIQUE</h1>
+    </main>
+  );
+}
