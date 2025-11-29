@@ -11,68 +11,32 @@ export const metadata: Metadata = {
   description: "Services de ramonage agréé, devis en ligne et conseils pour l'entretien de votre cheminée et poêle en Belgique.",
 };
 
-// Détermine si l'écran est mobile (simulation de media query en JS)
-const isMobileScreen = () => typeof window !== 'undefined' && window.innerWidth < 768;
-
 function Navbar() {
-  // Pour l'instant, on se base sur des styles statiques pour la démo
-  const isMobile = isMobileScreen();
-
-  // Style du conteneur des liens
-  const linksContainerStyle = {
-    display: 'flex', 
-    gap: isMobile ? '10px' : '25px', // Espace réduit sur mobile
-    alignItems: 'center',
-    // Sur mobile, on empile les liens
-    flexDirection: isMobile ? 'column' : 'row',
-    marginTop: isMobile ? '10px' : '0',
-    width: isMobile ? '100%' : 'auto',
-  };
-
-  // Style de la navigation principale
-  const navStyle = { 
-    backgroundColor: '#333', 
-    padding: isMobile ? '10px 20px' : '15px 40px', // Moins de padding sur mobile
-    marginBottom: '20px',
-    display: 'flex', 
-    // L'alignement change sur mobile
-    flexDirection: isMobile ? 'column' : 'row',
-    justifyContent: 'space-between', 
-    alignItems: isMobile ? 'flex-start' : 'center',
-    position: 'sticky', 
-    top: 0,
-    zIndex: 100 
-  };
-
-  // Style du bouton de contact
-  const contactButtonStyle = {
-    backgroundColor: '#d11e00', 
-    color: 'white', 
-    padding: '8px 15px', 
-    borderRadius: '5px',
-    textDecoration: 'none',
-    fontSize: '1.1rem',
-    fontWeight: 'bold',
-    // S'assure que le bouton prend toute la largeur sur mobile
-    width: isMobile ? '100%' : 'auto',
-    textAlign: 'center'
-  };
-
   return (
-    <nav style={navStyle}>
+    <nav style={{ 
+      backgroundColor: '#333', 
+      padding: '15px 40px', 
+      marginBottom: '20px',
+      display: 'flex', 
+      flexWrap: 'wrap', // Permet l'ajustement sur petit écran (le plus simple)
+      justifyContent: 'space-between', 
+      alignItems: 'center',
+      position: 'sticky', 
+      top: 0,
+      zIndex: 100 
+    }}>
       {/* Logo / Titre Principal */}
       <Link href="/" style={{ 
         color: '#fff', 
         textDecoration: 'none', 
-        fontSize: isMobile ? '1.3rem' : '1.5rem', // Taille réduite sur mobile
-        fontWeight: 'bold',
-        marginBottom: isMobile ? '10px' : '0'
+        fontSize: '1.5rem', 
+        fontWeight: 'bold' 
       }}>
         Ramoneur.be
       </Link>
 
       {/* Liens de navigation */}
-      <div style={linksContainerStyle}>
+      <div style={{ display: 'flex', gap: '25px', alignItems: 'center', marginTop: '10px' }}>
 
         <Link href="/" style={{ color: '#fff', textDecoration: 'none', fontSize: '1.1rem' }}>
           Accueil
@@ -87,7 +51,15 @@ function Navbar() {
           Ramoneur Agréé
         </Link>
 
-        <Link href="/contact" style={contactButtonStyle}>
+        <Link href="/contact" style={{ 
+          backgroundColor: '#d11e00', 
+          color: 'white', 
+          padding: '8px 15px', 
+          borderRadius: '5px',
+          textDecoration: 'none',
+          fontSize: '1.1rem',
+          fontWeight: 'bold'
+        }}>
           Contact / Urgence
         </Link>
       </div>
