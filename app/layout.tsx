@@ -11,6 +11,66 @@ export const metadata: Metadata = {
   description: "Services de ramonage agréé, devis en ligne et conseils pour l'entretien de votre cheminée et poêle en Belgique.",
 };
 
+// Composant de la barre de navigation (Navbar)
+function Navbar() {
+  return (
+    <nav style={{ 
+      backgroundColor: '#333', 
+      padding: '15px 40px', 
+      marginBottom: '20px',
+      display: 'flex', 
+      justifyContent: 'space-between', 
+      alignItems: 'center',
+      position: 'sticky', 
+      top: 0,
+      zIndex: 100 
+    }}>
+      {/* Logo / Titre Principal */}
+      <Link href="/" style={{ 
+        color: '#fff', 
+        textDecoration: 'none', 
+        fontSize: '1.5rem', 
+        fontWeight: 'bold' 
+      }}>
+        Ramoneur.be
+      </Link>
+
+      {/* Liens de navigation */}
+      <div style={{ display: 'flex', gap: '25px', alignItems: 'center' }}>
+
+        {/* Bouton Accueil */}
+        <Link href="/" style={{ color: '#fff', textDecoration: 'none', fontSize: '1.1rem' }}>
+          Accueil
+        </Link>
+
+        {/* Pages Principales */}
+        <Link href="/services" style={{ color: '#fff', textDecoration: 'none', fontSize: '1.1rem' }}>
+          Nos Services
+        </Link>
+        <Link href="/prix" style={{ color: '#fff', textDecoration: 'none', fontSize: '1.1rem' }}>
+          Tarifs & Devis
+        </Link>
+        <Link href="/ramoneur" style={{ color: '#fff', textDecoration: 'none', fontSize: '1.1rem' }}>
+          Ramoneur Agréé
+        </Link>
+
+        {/* Bouton d'Action (Contact) */}
+        <Link href="/contact" style={{ 
+          backgroundColor: '#d11e00', 
+          color: 'white', 
+          padding: '8px 15px', 
+          borderRadius: '5px',
+          textDecoration: 'none',
+          fontSize: '1.1rem',
+          fontWeight: 'bold'
+        }}>
+          Contact / Urgence
+        </Link>
+      </div>
+    </nav>
+  );
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -19,60 +79,8 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className={inter.className}>
-
-        {/* BARRE DE NAVIGATION GLOBALE */}
-        <header style={{ 
-          backgroundColor: '#333', 
-          padding: '15px 40px', 
-          marginBottom: '20px',
-          display: 'flex', 
-          justifyContent: 'space-between', 
-          alignItems: 'center',
-          position: 'sticky', 
-          top: 0,
-          zIndex: 100 
-        }}>
-          {/* Logo / Titre Principal */}
-          <Link href="/" style={{ 
-            color: '#fff', 
-            textDecoration: 'none', 
-            fontSize: '1.5rem', 
-            fontWeight: 'bold' 
-          }}>
-            Ramoneur.be
-          </Link>
-
-          {/* Liens de navigation */}
-          <nav style={{ display: 'flex', gap: '25px', alignItems: 'center' }}>
-            <Link href="/" style={{ color: '#fff', textDecoration: 'none', fontSize: '1.1rem' }}>
-              Accueil
-            </Link>
-            <Link href="/services" style={{ color: '#fff', textDecoration: 'none', fontSize: '1.1rem' }}>
-              Nos Services
-            </Link>
-            <Link href="/prix" style={{ color: '#fff', textDecoration: 'none', fontSize: '1.1rem' }}>
-              Tarifs & Devis
-            </Link>
-            <Link href="/ramoneur" style={{ color: '#fff', textDecoration: 'none', fontSize: '1.1rem' }}>
-              Ramoneur Agréé
-            </Link>
-            <Link href="/contact" style={{ 
-              backgroundColor: '#d11e00', 
-              color: 'white', 
-              padding: '8px 15px', 
-              borderRadius: '5px',
-              textDecoration: 'none',
-              fontSize: '1.1rem',
-              fontWeight: 'bold'
-            }}>
-              Contact / Urgence
-            </Link>
-          </nav>
-        </header>
-
+        <Navbar /> {/* Le menu est ici, donc il est global */}
         {children}
-
-        {/* PIED DE PAGE ET SEO BASIQUE */}
         <footer style={{ 
             backgroundColor: '#eee', 
             padding: '20px', 
