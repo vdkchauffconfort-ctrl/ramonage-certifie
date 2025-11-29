@@ -1,5 +1,5 @@
-import SubMenuServices from '@/components/SubMenuServices'; // L'IMPORT CORRECT
-import Link from 'next/link'; // Import pour le bouton d'action
+import SubMenuServices from '../components/SubMenuServices'; // L'IMPORT CORRECT
+import Link from 'next/link';
 
 export default function ServicesPage() {
   return (
@@ -7,7 +7,7 @@ export default function ServicesPage() {
 
       <SubMenuServices /> {/* L'APPEL CORRECT DU MENU SECONDAIRE */}
 
-      <div style={{ padding: '0 20px' }}> {/* Contenu principal pour la page Services */}
+      <div style={{ padding: '0 20px' }}>
         <h1 style={{ 
           fontSize: '2.5rem', 
           color: '#d11e00', 
@@ -18,7 +18,7 @@ export default function ServicesPage() {
           Nos Services de Ramonage : Obligations, Avantages et Conseils pour une Cheminée Sûre
         </h1>
 
-        {/* -------------------- VOTRE CONTENU SEO DÉTAILLÉ -------------------- */}
+        {/* -------------------- RESTE DE VOTRE CONTENU SEO DÉTAILLÉ -------------------- */}
         <p style={{ marginTop: '2rem', lineHeight: '1.6' }}>
           Entretenir sa cheminée ne se limite pas à préserver un bon tirage ou à prolonger la durée de vie de l’installation. Le ramonage joue un rôle essentiel en matière de sécurité, d’économies d’énergie et de respect des obligations légales. Pourtant, il n’est pas toujours évident de s’y retrouver entre les exigences réglementaires et les bonnes pratiques recommandées. Ce guide propose un tour d’horizon complet sur le sujet, tout en donnant un aperçu des services professionnels de ramonage disponibles actuellement.
         </p>
