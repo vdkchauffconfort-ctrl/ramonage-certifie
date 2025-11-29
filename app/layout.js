@@ -1,12 +1,16 @@
 import './globals.css';
 import Link from 'next/link';
 import React from 'react';
-import Head from 'next/head'; // NOUVEL IMPORT NÉCESSAIRE
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 
-// Métadonnées (Pour le référencement)
-export const metadata = {
+const inter = Inter({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
   title: "Ramonage Cheminée - Votre Expert Certifié en Belgique",
   description: "Services de ramonage agréé, devis en ligne et conseils pour l'entretien de votre cheminée et poêle en Belgique.",
+  // CONFIGURATION CRITIQUE POUR LE MOBILE (VIEWPORT)
+  viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
 };
 
 // Composant de la barre de navigation (Navbar)
@@ -35,9 +39,13 @@ function Navbar() {
 
       {/* Liens de navigation */}
       <div style={{ display: 'flex', gap: '25px', alignItems: 'center' }}>
+
+        {/* Bouton Accueil */}
         <Link href="/" style={{ color: '#fff', textDecoration: 'none', fontSize: '1.1rem' }}>
           Accueil
         </Link>
+
+        {/* Pages Principales */}
         <Link href="/services" style={{ color: '#fff', textDecoration: 'none', fontSize: '1.1rem' }}>
           Nos Services
         </Link>
@@ -65,17 +73,16 @@ function Navbar() {
   );
 }
 
-// Composant Principal de Layout
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html lang="fr">
-      <Head>
-        {/* TAG ESSENTIEL POUR LE MOBILE */}
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
-      <body>
-        <Navbar /> {/* Le menu est ici */}
-        {children} {/* Le contenu de chaque page va ici */}
+      <body className={inter.className}>
+        <Navbar /> 
+        {children}
         <footer style={{ 
             backgroundColor: '#eee', 
             padding: '20px', 
@@ -84,7 +91,7 @@ export default function RootLayout({ children }) {
             color: '#555',
             marginTop: '50px'
         }}>
-            <p>&copy; {new Date().getFullYear()} Le Ramoneur Certifié Belge.</p>
+            <p>&copy; {new Date().getFullYear()} Le Ramoneur Certifié Belge. Votre partenaire ramonage en Belgique. Tous droits réservés.</p>
         </footer>
       </body>
     </html>
